@@ -26,6 +26,14 @@ img{
     display: inline;
 }
 
+.item.is-selected {
+    opacity: 50%;
+}
+
+img.is-selected-hovering{
+    opacity: 50%;
+}
+
 #price{
     position: relative;
     padding: 6px 10px 4px 4px;

@@ -1,6 +1,7 @@
-<span class="item"(click)="onDetails(car.id)" >
+<span [appSelect] = "car.fuelType.fuelType"
+class="item" (click)="onDetails(car.id)" >
     <div>
-    <img [src]="car.photos[0].photoPath" alt="Vaz 2102 photo" width="250" height="150"/>
+    <img appSelect [src]="car.photos[0].photoPath" alt="Vaz 2102 photo" width="250" height="150"/>
     <p id="price"><b>{{car.price}}</b></p>
     <h3>{{car.brand}} {{car.model}}</h3>
     </div>

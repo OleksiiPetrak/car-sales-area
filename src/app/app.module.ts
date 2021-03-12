@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CarItemComponent} from './car-item.component';
+import { SelectDirective } from './select.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarItemComponent
+    CarItemComponent,
+    SelectDirective
   ],
   imports: [
     BrowserModule,
