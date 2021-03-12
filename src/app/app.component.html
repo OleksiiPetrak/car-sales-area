@@ -1,7 +1,3 @@
-<!-- <img src="/assets/VAZ02.jpg" alt="Vaz 2102">
-<p>Current price {{count}}k $</p>
-<button (click)="increase()">Make a bid</button> -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +18,9 @@
                 <p>Sort by ...</p>
             </article>
             <article>
-                <car-item></car-item>
+                <car-item *ngFor="let carItem of carItems.value"
+                [car]="carItem"
+                (delete)="onMediaItemDelete($event)"></car-item>
             </article>
         </section>
     </main>

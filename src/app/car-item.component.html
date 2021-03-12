@@ -1,4 +1,4 @@
-<span class="item" *ngFor="let car of carItems.value">
+<span class="item"(click)="onDetails(car.id)" >
     <div>
     <img [src]="car.photos[0].photoPath" alt="Vaz 2102 photo" width="250" height="150"/>
     <p id="price"><b>{{car.price}}</b></p>
@@ -8,5 +8,4 @@
     <p>{{car.year}}</p>
     <p>{{car.mileage}}</p>
     <p>{{car.engineVolume}}</p>
-    <p>{{wasWatched()}}</p>
 </span>

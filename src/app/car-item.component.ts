@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Car } from './models/car';
-import { Collection } from './models/collection';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'car-item',
@@ -9,13 +6,12 @@ import { Collection } from './models/collection';
     styleUrls: ['./car-item.component.css']
 })
 
-export class CarItemComponent implements OnInit {
+export class CarItemComponent{
+    @Input() car;
+    @Output() delete = new EventEmitter();
 
-    carItems: Collection<Car>;
-
-    constructor(private http: HttpClient){}
-
-    ngOnInit(){
-        this.http.get('http://localhost/car/cars').subscribe((data:Collection<Car>)=>this.carItems=data);
+    onDetails(id: number){
+        console.log(`Car item ${id} clicked!`);
+        this.delete.emit();
     }
 }
