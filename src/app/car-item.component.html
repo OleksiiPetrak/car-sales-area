@@ -5,7 +5,8 @@
     <h3>{{car.brand}} {{car.model}}</h3>
     </div>
     <p>{{car.salesArea.areaLocation}}</p>
-    <p>{{car.year}}</p>
+    <p>{{car.year | date: 'yyyy'}}</p>
     <p>{{car.mileage}}</p>
     <p>{{car.engineVolume}}</p>
+    <p>{{car.fuelType.fuelType}}</p>
 </span>
