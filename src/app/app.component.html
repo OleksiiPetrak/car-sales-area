@@ -11,13 +11,13 @@
             <h1>Car Sales Area</h1>
         </header>
         <section>
-            <h2>
-                Cars' catalog
-            </h2>
             <article>
-                <p>Sort by ...</p>
+                <car-search-form></car-search-form>
             </article>
             <article>
+                <h2>
+                    Cars' catalog
+                </h2>
                 <car-item *ngFor="let carItem of carItems.value"
                 [car]="carItem"
                 (delete)="onMediaItemDelete($event)"></car-item>

@@ -1,0 +1,30 @@
+<header>
+    <h3>Search</h3>
+</header>
+<form 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)">
+    <ul>
+        <li>
+            <label for="brand">Brand:</label>
+            <select name="brand" id="brand" formControlName="brand">
+                <option value="Honda">Honda</option>
+                <option value="Opel">Opel</option>
+                <option value="Renault">Renault</option>
+                <option value="Vaz">Vaz</option>
+            </select>
+        </li>
+        <li>
+            <label for="model">Model:</label>
+            <input type="text" name="model" id="model" formControlName="model">
+        </li>
+        <li>
+            <label for="fuel">Fuel:</label>
+            <select name="fuel" id="fuel" formControlName="fuel">
+                <option value="Petrol">Petrol</option>
+                <option value="Gas">Gas</option>
+            </select>
+        </li>
+    </ul>
+    <button type="submit">Apply</button>
+</form>
