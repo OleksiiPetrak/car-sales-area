@@ -1,0 +1,42 @@
+<header>
+    <h3>Search</h3>
+</header>
+<form 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)">
+
+            <label for="brand">Brand:</label>
+            <select id="brand" formControlName="brand">
+                <option value=""></option>
+                <option value="Honda">Honda</option>
+                <option value="Opel">Opel</option>
+                <option value="Renault">Renault</option>
+                <option value="Vaz">Vaz</option>
+            </select>
+
+            <label for="model">Model:</label>
+            <input type="text" id="model" formControlName="model">
+
+            <label for="priceMin">Price min:</label>
+            <input type="number" id="priceMin" formControlName="priceMin">
+
+            <label for="priceMax">Price max:</label>
+            <input type="number" id="priceMax" formControlName="priceMax">
+
+            <label for="body">Body:</label>
+            <select id="body" formControlName="body">
+                <option value=""></option>
+                <option value="wagoon">Wagoon</option>
+                <option value="sedan">Sedan</option>
+                <option value="cabriolet">Cabriolet</option>
+                <option value="hatch">Hatch</option>
+            </select>
+        <!-- <li>
+            <label for="fuel">Fuel:</label>
+            <select name="fuel" id="fuel" formControlName="fuel">
+                <option value="Petrol">Petrol</option>
+                <option value="Gas">Gas</option>
+            </select>
+        </li> -->
+    <button type="submit" [disabled]="!form.valid" >Apply</button>
+</form>

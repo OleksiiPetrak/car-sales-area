@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'car-item',
@@ -8,10 +9,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class CarItemComponent{
     @Input() car;
-    @Output() delete = new EventEmitter();
+
+    constructor(private router: Router){}
 
     onDetails(id: number){
         console.log(`Car item ${id} clicked!`);
-        this.delete.emit();
+        this.router.navigate([`/details/${id}`]);
     }
 }

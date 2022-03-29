@@ -1,0 +1,18 @@
+<main>
+    <section>
+        <div class="additional">
+            <aside>
+                <car-search-form (applyFilter)="onApplyFilter($event)"></car-search-form>
+            </aside>
+        </div>
+        <div class="main-content">
+            <article>
+                <h2>
+                    Cars' catalog
+                </h2>
+                <car-item *ngFor="let carItem of carItems.value"
+                [car]="carItem"></car-item>
+            </article>
+        </div>
+    </section>
+</main>

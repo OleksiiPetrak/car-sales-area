@@ -1,0 +1,80 @@
+<main>
+    <div class="main-content">
+
+        <!--Photo section-->
+        <section class="photo-section">
+            <h2>{{carDetails.brand}} {{carDetails.model}}</h2>
+            <p id="price" class="main-price" >${{carDetails.price}}</p>
+            <img class="main-img" appSelect [src]="carDetails.photos[0].photoPath" alt="Car image"/>
+        </section>
+
+        <!--General info-->
+        <section class="general-info">
+            <h3>General car info</h3>
+            <article>
+                <table>
+                    <tr>
+                        <td class="label-td">Body</td>
+                        <td>{{carDetails.body}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">Year</td>
+                        <td>{{carDetails.year | date: 'yyyy'}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">City</td>
+                        <td>{{carDetails.salesArea.areaLocation}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">Fuel</td>
+                        <td>{{carDetails.fuelType.fuelType}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">Milleage</td>
+                        <td>{{carDetails.mileage}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">Volume</td>
+                        <td>{{carDetails.engineVolume}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">Color</td>
+                        <td>{{carDetails.color}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td">Vin-code</td>
+                        <td>{{carDetails.vinCode}}</td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td"></td>
+                        <td></td>
+                        <td class="divider-td"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-td"></td>
+                        <td></td>
+                        <td class="divider-td"></td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <!--Details-->
+        <section class="details">
+            <h3>Details</h3>
+            <article>
+                <p>
+                    {{carDetails.description}}
+                </p>
+            </article>
+        </section>
+    </div>
+</main>

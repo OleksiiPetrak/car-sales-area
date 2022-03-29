@@ -1,0 +1,75 @@
+/*------------------ Photo styles ----------------*/
+h2 {
+    font-size: 28px;
+    margin: 2%;
+    display: inline-block;
+}
+
+.photo-section{
+    box-sizing: border-box;
+}
+
+.main-price{
+    display: inline-block;
+    position: relative;
+    padding: 12px 10px;
+    margin: 1%;
+    background-color: #38B86F;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-img{
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 2% 2% 2%;
+}
+
+/*------------------ General info styles ----------------*/
+.general-info {
+    border-top: 4px solid #38b86f;
+    padding-top: 2%;
+    margin: 2%;
+}
+
+tr{
+    display: inline-block;
+    /* border-bottom: 1px solid #d5d9e0; */
+}
+
+td{
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+table > tbody tr td{
+    font-size: 14px;
+    border-bottom: 1px solid #d5d9e0;
+}
+
+.label-td{
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    color: #888888;
+}
+
+.divider-td{
+    border-bottom: none;
+}
+
+/*------------------ Options styles ----------------*/
+
+/*------------------ Details styles ----------------*/
+.details{
+    clear: both;
+    border-top: 4px solid #38b86f;
+    padding-top: 2%;
+    margin: 2%;
+}
+
+.details h3{
+    margin-bottom: 1.5%;
+}

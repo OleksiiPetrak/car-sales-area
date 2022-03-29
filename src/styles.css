@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/*------------------ Global styles ----------------*/
+* {
+    margin: 0;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #38B86F;
+}
+
+h5, p{
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+.additional{
+    width: 20%;
+    float: left;
+    margin: 12px;
+    padding: 1%;
+    background-color: #38B86F;
+}
+
+.main-content{
+    width: 80%;
+    margin: 2% 12%;
+}
