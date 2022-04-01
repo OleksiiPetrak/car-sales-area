@@ -3,7 +3,7 @@ import { Car } from "../models/car";
 import { Collection } from "../models/collection";
 import { Injectable } from "@angular/core";
 import { BracketsConverter } from "../helpers/bracets-converter";
-import { UrlConstants } from "../constants/url-constants";
+import { UrlConstants } from "../constants/url.constants";
 
 @Injectable({
     providedIn: 'root'

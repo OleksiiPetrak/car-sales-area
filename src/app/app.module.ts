@@ -10,11 +10,8 @@ import { SelectDirective } from './directives/select.directive';
 import { CarSearchFormComponent } from './components/car-search-form/car-search-form.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { CarListComponent } from './components/car-list/car-list.component';
-
-const appRoutes: Routes =[
-  { path: "", component: CarListComponent },
-  { path:"details/:id", component: CarDetailsComponent }
-]
+import { CarCreationComponent } from './components/car-creation/car-creation.component';
+import { appRoutes } from './constants/routing.constants';
 
 @NgModule({
   declarations: [
@@ -23,7 +20,8 @@ const appRoutes: Routes =[
     SelectDirective,
     CarSearchFormComponent,
     CarDetailsComponent,
-    CarListComponent
+    CarListComponent,
+    CarCreationComponent
   ],
   imports: [
     BrowserModule,

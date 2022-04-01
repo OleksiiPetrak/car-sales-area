@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:44312'
+  apiUrl: 'https://carsalesarea.azurewebsites.net' //cloud
+  //apiUrl: 'https://localhost:44312' //local
 };
 
 /*
