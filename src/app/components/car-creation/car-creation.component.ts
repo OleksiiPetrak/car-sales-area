@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CarApiService } from 'src/app/services/car-api.service';
+import { MediaApiService } from 'src/app/services/media-api.service';
 
 @Component({
   selector: 'app-car-creation',
@@ -13,7 +14,8 @@ export class CarCreationComponent implements OnInit {
   //@Output() createAddverticement = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder,
-     private carApiService: CarApiService) { }
+     private carApiService: CarApiService,
+     private mediaApiService: MediaApiService) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -26,8 +28,19 @@ export class CarCreationComponent implements OnInit {
       price: this.formBuilder.control(''),
       vinCode: this.formBuilder.control(''),
       color: this.formBuilder.control(''),
-      body: this.formBuilder.control('')
+      body: this.formBuilder.control(''),
+      file: this.formBuilder.control('')
     });
+  }
+
+  onMediaSelected(event){
+    const file:File = event.target.files[0];
+
+    if (file) {
+      const formData = new FormData();
+      formData.append("carMediaFile", file);
+      this.mediaApiService.saveNewCarMedia(formData).subscribe((data:Object)=>this.creationStatus = data);
+    }
   }
 
   onSubmit(carInfo){
