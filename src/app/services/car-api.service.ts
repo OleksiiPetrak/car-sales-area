@@ -21,7 +21,7 @@ export class CarApiService {
     }
 
     getAllCarsList() {
-        return this.http.get<Collection<Car>>(UrlConstants.getAllCarsEndpoint);
+      return this.http.get<Collection<Car>>(UrlConstants.getAllCarsEndpoint);
     }
 
     getFilteredCarsList(carSearchItem) {
@@ -51,5 +51,9 @@ export class CarApiService {
           }
         
           return this.http.get<Collection<Car>>(UrlConstants.getAllCarsEndpoint, {params});
+    }
+
+    createNewAddverticement(carItem: Car){
+      return this.http.post(UrlConstants.createCar, carItem);
     }
 }

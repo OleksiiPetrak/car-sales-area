@@ -1,1 +1,39 @@
-<p>car-creation works!</p>
+<header>
+    <h2>Create new addverticement</h2>
+</header>
+<form 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)">
+
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" formControlName="brand"/>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" formControlName="model"/>
+
+    <label for="year">Year:</label>
+    <input type="date" id="year" formControlName="year"/>
+
+    <label for="engineVolume">Engine volume:</label>
+    <input type="number" id="engineVolume" formControlName="engineVolume"/>
+
+    <label for="mileage">Mileage:</label>
+    <input type="number" id="mileage" formControlName="mileage"/>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" formControlName="description"/>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" formControlName="price"/>
+
+    <label for="vinCode">Vin code:</label>
+    <input type="text" id="vinCode" formControlName="vinCode"/>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" formControlName="color"/>
+
+    <label for="body">Body:</label>
+    <input type="text" id="body" formControlName="body"/>
+
+    <button type="submit">Create</button>
+</form>

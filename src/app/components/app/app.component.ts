@@ -14,8 +14,13 @@ export class AppComponent implements OnInit {
   ngOnInit(): void{
   }
 
+  onHomeLabelClick(){
+    console.log('Home label clicked');
+    this.router.navigate([''])
+  }
+
   onCarCreation(){
-    console.log('Car creation button clicked!');
-    this.router.navigate([`addverticementcreation`]);
+    console.log('Car creation button clicked');
+    this.router.navigate(['addverticementcreation']);
   }
 }

@@ -11,6 +11,10 @@ h1 {
     font-size: 36px;
 }
 
+a {
+    cursor: pointer;
+}
+
 /*------------------ Footer styles ----------------*/
 footer{
     clear: both;

@@ -4,5 +4,6 @@ const host: string = environment.apiUrl;
 
 export const UrlConstants: {[key: string]: string} = {
     getAllCarsEndpoint: `${host}/car/cars`,
-    getCarEndoint: `${host}/car/{carId}`
+    getCarEndoint: `${host}/car/{carId}`,
+    createCar: `${host}/car/car`
 };
