@@ -53,7 +53,7 @@ export class CarApiService {
           return this.http.get<Collection<Car>>(UrlConstants.getAllCarsEndpoint, {params});
     }
 
-    createNewAddverticement(carItem: Car){
-      return this.http.post(UrlConstants.createCar, carItem);
+    createNewAddverticement(formData : FormData){
+      return this.http.post(UrlConstants.createCar, formData);
     }
 }

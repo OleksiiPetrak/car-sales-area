@@ -1,7 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CarApiService } from 'src/app/services/car-api.service';
-import { MediaApiService } from 'src/app/services/media-api.service';
 
 @Component({
   selector: 'app-car-creation',
@@ -10,12 +9,11 @@ import { MediaApiService } from 'src/app/services/media-api.service';
 })
 export class CarCreationComponent implements OnInit {
   form: FormGroup;
+  mediaFiles: string [] = [];
   creationStatus: Object;
-  //@Output() createAddverticement = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder,
-     private carApiService: CarApiService,
-     private mediaApiService: MediaApiService) { }
+     private carApiService: CarApiService) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -33,20 +31,29 @@ export class CarCreationComponent implements OnInit {
     });
   }
 
-  onMediaSelected(event){
-    const file:File = event.target.files[0];
-
-    if (file) {
-      const formData = new FormData();
-      formData.append("carMediaFile", file);
-      this.mediaApiService.saveNewCarMedia(formData).subscribe((data:Object)=>this.creationStatus = data);
+  onMediaSelected(event: any): void{
+    for (let i = 0; i < event.target.files.length; i++) {
+      this.mediaFiles.push(event.target.files[i]);
     }
   }
 
-  onSubmit(carInfo){
-    console.log(carInfo);
-    this.carApiService.createNewAddverticement(carInfo).subscribe((data:Object)=>this.creationStatus = data);
-    console.log('Car creation works');
-    //this.createAddverticement.emit(carInfo);
+  onSubmit(carInfo: any): void{
+    const formData = new FormData();
+   
+    formData.append('brand', carInfo.brand);
+    formData.append('model', carInfo.model);
+    formData.append('year', carInfo.year);
+    formData.append('engineVolume', carInfo.engineVolume);
+    formData.append('mileage', carInfo.mileage);
+    formData.append('description', carInfo.description);
+    formData.append('price', carInfo.price);
+    formData.append('vinCode', carInfo.vinCode);
+    formData.append('color', carInfo.color);
+    formData.append('body', carInfo.body);
+    for (let i = 0; i < this.mediaFiles.length; i++) {
+      formData.append('files', this.mediaFiles[i]);      
+    }
+
+    this.carApiService.createNewAddverticement(formData).subscribe((data:Object)=>this.creationStatus = data);
   }
 }
