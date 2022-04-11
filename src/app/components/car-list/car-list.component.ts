@@ -3,7 +3,6 @@ import { Collection } from 'src/app/models/collection';
 import { Car } from 'src/app/models/car';
 import { CarApiService } from 'src/app/services/car-api.service';
 import { BracketsConverter } from 'src/app/helpers/bracets-converter';
-import { listenerCount } from 'process';
 
 @Component({
   selector: 'app-car-list',
